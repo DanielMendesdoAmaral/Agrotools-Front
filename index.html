@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#550073" />
+    <meta name="Agrotools Forms" content="Crie e responda formulários!" />
+    <!--Metadata-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/presets.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/libs/toastr.min.css">
+    <!--JS-->
+    <!--Packages-->
+    <script src="https://kit.fontawesome.com/14e5f2677e.js" crossorigin="anonymous"></script>
+    <!--Icons-->
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="icon" href="favicon.ico" />
+    <!--Configurations-->
+    <title>Agrotools Forms</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="large-container header">
+            <a href="/">
+                <img src="assets/logo.png" class="logo" alt="Agrotools Forms - Crie e responda formulários" title="Agrotools Forms - Crie e responda formulários" loading="lazy">
+            </a>
+            <div>
+                <a href="https://github.com/DanielMendesdoAmaral" target="_blank">
+                    <figure class="profile-pic">
+                        <div class="contain" title="Conheça meu GitHub!">
+                            <figcaption>GitHub <i class="fas fa-external-link-alt"></i></figcaption>
+                        </div>
+                    </figure>
+                    <p class="text-center text-bold link" title="Conheça meu GitHub!">GitHub <i class="fas fa-external-link-alt"></i></p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main id="main" class="small-container">
+        <h1 class="text-black text-center text-bold title">Formulários</h1>
+        <div id="loading"></div>
+        <section id="forms"></section>
+        <button class="new-form" title="Criar um formulário" data-bs-toggle="modal" data-bs-target="#create-a-form-modal">
+            <i class="fas fa-plus"></i>
+        </button>
+
+        <!--See answers a form modal-->
+        <div class="modal fade" id="see-answers-a-form-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="see-answers-a-form-modal-staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title text-center text-bold text-black" id="see-answers-a-form-modal-title"></h5>
+                </div>
+                <div class="modal-body" id="see-answers-a-form-modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="form-button-cancel label text-bold" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!--Waze modal-->
+        <div class="modal fade" id="waze-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="waze-modal-title"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="waze-modal-body">
+                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!--Answer a form modal-->
+        <div class="modal fade" id="answer-a-form-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="answer-a-modal-staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title text-center text-bold text-black" id="answer-a-modal-title"></h5>
+                </div>
+                <div class="modal-body" id="answer-a-modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="form-button-cancel label text-bold" id="close-af" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="form-button-ok text-bold label" id="save-af">Enviar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!--Create a form modal-->
+        <div class="modal fade" id="create-a-form-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title text-center text-bold text-black" id="staticBackdropLabel">Crie um formulário</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="form-title-input-cf" class="label">Título</label>
+                        <input type="text" class="form-control" id="form-title-input-cf">
+                    </div>
+                    <div class="mb-3">
+                        <label for="author-name-input-cf" class="label">Nome do autor</label>
+                        <input type="text" class="form-control" id="author-name-input-cf">
+                    </div>
+                    <p class="text-center text-bold paragraph">Perguntas</p>
+                    <label for="question-cf" class="label">Adicionar perguntas (escreva e clique no botão ao lado)</label>
+                    <div class="mb-3 input-group">
+                        <input type="text" class="form-control" id="question-cf">
+                        <span class="input-group-text form-button-ok" id="basic-addon1"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div id="questions-cf">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="form-button-cancel label text-bold" data-bs-dismiss="modal" id="close-cf">Fechar</button>
+                    <button type="button" class="form-button-ok text-bold label" id="save-cf">Criar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </main>
+    <footer id="footer">
+        <div class="large-container footer">
+            <div class="footer-links-github">
+                <a href="https://github.com/DanielMendesdoAmaral/Agrotools-API" class="link text-bold" title="Ver repositório da api no GitHub">Ver repositório da api no GitHub <i class="fas fa-external-link-alt"></i></a>
+                <a href="https://github.com/DanielMendesdoAmaral/Agrotools-Front.git" class="link text-bold" title="Ver repositório do front end no GitHub">Ver repositório do front end no GitHub <i class="fas fa-external-link-alt"></i></a>
+                <a href="https://github.com/DanielMendesdoAmaral/Agrotools-API" class="link text-bold" title="Ver repositório do mobile no GitHub">Ver repositório do mobile no GitHub <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <a href="#"><img src="assets/get-it-on-playstore.png" alt="Baixe o app na Google Play Store!" title="Baixe o app na Google Play Store!" loading="lazy"></a>
+        </div>
+    </footer>
+    <script src="js/libs/jquery-3.6.0.min.js"></script>
+    <script src="js/libs/bootstrap.bundle.js"></script>
+    <script src="js/libs/toastr.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/list-forms.js"></script>
+    <script src="js/answer-a-form.js"></script>
+    <script src="js/create-form.js"></script>
+</body>
+
+</html>
+

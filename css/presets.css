@@ -1,0 +1,149 @@
+/*Barlow font*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Barlow", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--white);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--white);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--purple);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple);
+}
+
+.large-container,
+.small-container {
+    margin: auto;
+}
+
+.large-container {
+    width: 90%;
+    max-width: 1200px;
+}
+
+.small-container {
+    width: 85%;
+    max-width: 1100px;
+}
+
+.link {
+    color: #0d6efd;
+    font-size: 1.2rem;
+}
+
+:root {
+    --purple: #550073;
+    --black: #222222;
+    --white: #EFEFEF;
+    --gray: #EBEBEB;
+    --small-border: solid 1px;
+    --large-border: solid 3px;
+    --shadow: 0 0 4 var(--black);
+    --radius: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    margin: 50px;
+    font-size: 3.5rem;
+}
+
+.modal-title {
+    font-size: 3rem;
+}
+
+.label {
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.form-control {
+    font-size: 1.5rem;
+}
+
+.form-button-cancel {
+    border: var(--large-border) white;
+    color: var(--white);
+    background: #EE0000;
+    padding: 5px;
+    border-radius: var(--radius);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.form-button-cancel:hover {
+    transition: 0.25s;
+    border: var(--large-border) #EE0000;
+    color: #EE0000;
+    background: white;
+    padding: 5px;
+    border-radius: var(--radius);
+    transition: 0.25s;
+}
+
+.form-button-ok {
+    transition: 0.25s;
+    border: var(--large-border) white;
+    color: var(--white);
+    background: #157347;
+    padding: 5px;
+    border-radius: var(--radius);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.form-button-ok:hover {
+    transition: 0.25s;
+    border: var(--large-border) #157347;
+    color: #157347;
+    background: white;
+    padding: 5px;
+    border-radius: var(--radius);
+    transition: 0.25s;
+}
+
+.paragraph {
+    font-size: 2rem;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+

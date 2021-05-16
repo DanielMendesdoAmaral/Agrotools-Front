@@ -1,0 +1,106 @@
+.new-form {
+    width: 50px;
+    height: 50px;
+    background: var(--purple);
+    border-radius: 100%;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10vh;
+    right: 5vw;
+    transition-duration: 0.25s;
+    border: var(--large-border) var(--white);
+}
+
+.new-form:hover {
+    transition-duration: 0.25s;
+    background: var(--white);
+    color: var(--purple);
+    border: var(--large-border) var(--purple);
+}
+
+.fa-plus {
+    font-size: 2rem;
+}
+
+#forms {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+
+article {
+    position: relative;
+    border: var(--small-border) #BBBBBB;
+    border-radius: var(--radius);
+    padding: 10px;
+    max-width: 300px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.form-title {
+    font-size: 2rem;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-information {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.see-answers,
+.answer {
+    border-radius: var(--radius);
+    padding: 5px;
+    width: 80%;
+    display: block;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.answer {
+    background: var(--purple);
+    border: var(--large-border) var(--white);
+    transition-duration: 0.25s;
+    color: var(--white);
+}
+
+.not-answered {
+    color: #EE0000;
+}
+
+.answer:hover {
+    background: var(--white);
+    border: var(--large-border) var(--purple);
+    color: var(--purple);
+    transition-duration: 0.25s;
+}
+
+.see-answers {
+    border: var(--large-border) var(--purple);
+    color: var(--purple);
+    transition-duration: 0.25s;
+}
+
+.see-answers:hover {
+    transition-duration: 0.25s;
+    border: var(--large-border) var(--white);
+    color: var(--white);
+    background: var(--purple);
+}
+
+#main {
+    margin-bottom: 100px;
+    min-height: calc(100vh - 140px);
+}
